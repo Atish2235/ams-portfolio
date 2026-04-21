@@ -18,7 +18,7 @@ const Hero = ({ name }) => {
       bottom: "0",
       opacity: "0.3",
       mixBlendMode: "lighten",
-      height: "80%",
+      height: "100%",
     },
 
     textContainer: {
