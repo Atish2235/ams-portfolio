@@ -13,13 +13,15 @@ import SocialIcons from "./SocialIcons";
 const Hero = ({ name }) => {
   // Styles for various elements
   const styles = {
-    landingImage: {
-      position: "absolute",
-      bottom: "0",
-      opacity: "0.3",
-      mixBlendMode: "lighten",
-      height: "100%",
-    },
+landingImage: {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  opacity: "0.3",
+  mixBlendMode: "lighten",
+  height: "80%",
+},
 
     textContainer: {
       display: "flex",
@@ -65,7 +67,7 @@ const Hero = ({ name }) => {
               cursor: "",
             }}
             onInit={(typewriter) => {
-              typewriter.changeDelay(50).typeString("Software Engineer").start();
+              typewriter.changeDelay(50).typeString("Computer Engineer").start();
             }}
           />
         </motion.div>

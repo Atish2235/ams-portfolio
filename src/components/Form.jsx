@@ -154,7 +154,7 @@ const Form = () => {
     >
       <h4 className="contentTitle">Send a Message</h4>
       {/* Input fields */}
-      <div className="col-12 col-md-6 formGroup" style={{ display: "inline-block" }}>
+      <div className="col-12 col-md-6 formGroup" >
         <input
           type="text"
           className={`formControl ${nameError ? "formError" : ""}`}
