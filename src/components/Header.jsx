@@ -11,26 +11,39 @@ import NavLinks from "./NavLinks";
 
 const Header = () => {
   return (
-    <header className="header">
-      {/* Link to the home page */}
-      <NavLink to="/">
-        {/* Animated logo */}
+    <header
+      className="header"
+      style={{
+        paddingTop: 0,
+        paddingBottom: "8px",
+        paddingInline: "clamp(14px, 4vw, 28px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        boxSizing: "border-box",
+      }}
+    >
+      <NavLink to="/" aria-label="Go to home">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2, duration: 0.5, type: "spring" }}
         >
-          {/* Animated logo image */}
           <motion.img
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             className="logo"
             src={logo}
-            alt="Michael Yeates' Logo"
+            alt="Atish Shinde's Logo"
+            style={{
+              width: "clamp(60px, 16vw, 84px)",
+              height: "auto",
+              display: "block",
+            }}
           />
         </motion.div>
       </NavLink>
-      {/* Navigation links */}
       <NavLinks />
     </header>
   );

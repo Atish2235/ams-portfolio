@@ -2,25 +2,22 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
-import aboutMeImg from "../images/aboutme.jpeg";
+import aboutMeImg from "../images/suit.png";
 
 /**
  * Represents the About Me section.
- * Displays information about the user.
- * Not currently in use.
  *
  * @component
  * @param {string} name - The name of the user.
  */
 
 const AboutMe = ({ name }) => {
-  // Using react-intersection-observer to determine if the component is in view
   const [ref, inView] = useInView({
     threshold: 0.4,
     triggerOnce: true,
   });
 
-  // Variants for staggered animations
+  // Stagger animation
   const staggerVariants = {
     initial: { opacity: 0 },
     animate: {
@@ -31,7 +28,7 @@ const AboutMe = ({ name }) => {
     },
   };
 
-  // Variants for paragraph animations
+  // Paragraph animation
   const paragraphVariants = {
     initial: { y: 20, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -39,58 +36,138 @@ const AboutMe = ({ name }) => {
 
   return (
     <section className="about">
-      <div className="aboutContainer container">
+      <div
+        className="aboutContainer container"
+        style={{ marginTop: "-3rem" }}
+      >
         <div className="row">
+          
+          {/* Image Section */}
           <motion.div
             className="personalImage col-12 col-lg-6"
             ref={ref}
             initial={{ x: "-10vw", opacity: 0, scale: 0.5 }}
-            animate={inView ? { x: 0, opacity: 1, scale: 1 } : { x: "-10vw", opacity: 0, scale: 0.5 }}
+            animate={
+              inView
+                ? { x: 0, opacity: 1, scale: 1 }
+                : { x: "-10vw", opacity: 0, scale: 0.5 }
+            }
             transition={{ duration: 0.4, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
           >
-            {/* Display the personal image */}
-            <motion.img src={aboutMeImg} alt={name} />
+            <motion.img
+              src={aboutMeImg}
+              alt={name}
+              style={{
+                width: "min(420px, 100%)",
+                aspectRatio: "1 / 1",
+                borderRadius: "50%",
+                objectFit: "cover",
+                objectPosition: "top center",
+                display: "block",
+                margin: "0 auto",
+              }}
+            />
           </motion.div>
-          <div className="personalInfo col-12 col-lg-6">
-            <motion.div className="contentContainer" variants={staggerVariants}>
-              {/* Display greeting and job title with animation */}
-              <motion.h4 variants={paragraphVariants}>Nice to meet you! 👋🏻</motion.h4>
-              <motion.h5 variants={paragraphVariants}>I'm a Software Engineer at COMPANY.</motion.h5>
 
-              {/* Display content description with animation */}
+          {/* Content Section */}
+          <div className="personalInfo col-12 col-lg-6">
+            <motion.div
+              className="contentContainer"
+              variants={staggerVariants}
+            >
+              <motion.h4 variants={paragraphVariants}>
+                Nice to meet you! 👋🏻
+              </motion.h4>
+
+              <motion.h5 variants={paragraphVariants}>
+                I'm Atish Shinde, a Computer Engineer.
+              </motion.h5>
+
               <motion.div
                 className="contentDescription"
                 variants={staggerVariants}
                 initial="initial"
                 animate={inView ? "animate" : "initial"}
               >
-                {/* Paragraphs with animation */}
                 <motion.p variants={paragraphVariants}>
-                  Today, I find myself knee-deep in an exhilarating chapter of my journey as a POSITION at the tech
-                  titan, <span style={{ color: "var(--hl-color)" }}> COMPANY</span>. My playground? The captivating
-                  universe of <span style={{ color: "var(--hl-color)" }}> DEPARTMENT</span>.
+                  I’m a passionate{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Computer Engineer
+                  </span>{" "}
+                  with a strong interest in{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Data Science
+                  </span>
+                  ,{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Machine Learning
+                  </span>{" "}
+                  and{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Full Stack Development
+                  </span>
+                  . I enjoy transforming ideas into real-world applications and
+                  solving problems using technology.
                 </motion.p>
+
                 <br />
+
                 <motion.p variants={paragraphVariants}>
-                  Here, I don my <span style={{ color: "var(--hl-color)" }}> problem-solving </span>
-                  cape and dive headfirst into real-world challenges, all while relentlessly pursuing a{" "}
-                  <span style={{ color: "var(--hl-color)" }}> DEGREE NAME</span> degree from the UNIVERSITY. So here I
-                  am, juggling bits of binary and real-life conundrums, all while crafting my own success story.
+                  I have hands-on experience working with technologies like{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    React.js
+                  </span>
+                  ,{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Node.js
+                  </span>
+                  ,{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    MongoDB
+                  </span>{" "}
+                  and{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Python
+                  </span>
+                  . I’ve built projects such as a{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Poster Selling Website (KArtz)
+                  </span>
+                  , a{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Remote Access Tool
+                  </span>
+                  , and a{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    Network Monitoring Dashboard
+                  </span>
+                  .
                 </motion.p>
+
                 <br />
+
                 <motion.p variants={paragraphVariants}>
-                  Life is a kaleidoscope of experiences, far beyond the confines of work. When code isn't my focus, I'm
-                  conquering HOBBY, HOBBY, and fueling my love for HOBBY.
+                  Beyond coding, I enjoy{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    exploring new places
+                  </span>
+                  ,{" "}
+                  <span style={{ color: "var(--hl-color)" }}>
+                    cooking
+                  </span>
+                  , and continuously learning new technologies. I’m always eager
+                  to grow, take on challenges, and build impactful solutions.
                 </motion.p>
               </motion.div>
 
-              {/* Button to view the portfolio */}
+              {/* Button */}
               <NavLink to="/portfolio">
                 <Button name="View Portfolio" />
               </NavLink>
             </motion.div>
           </div>
+
         </div>
       </div>
     </section>

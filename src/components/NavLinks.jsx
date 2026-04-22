@@ -32,7 +32,6 @@ const NavLinks = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2.4, duration: 0.5, type: "spring" }}
         >
-          {/* Home link */}
           <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
             Home
           </NavLink>
@@ -43,9 +42,8 @@ const NavLinks = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2.3, duration: 0.5, type: "spring" }}
         >
-          {/* Portfolio link */}
-          <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
-            Portfolio
+          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+            About
           </NavLink>
         </motion.div>
 
@@ -54,17 +52,26 @@ const NavLinks = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
         >
-          {/* Contact link */}
-          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
-            Contact
+          <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
+            Portfolio
           </NavLink>
         </motion.div>
+
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2.1, duration: 0.5, type: "spring" }}
         >
-          {/* Light/Dark mode toggle */}
+          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </NavLink>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 2.0, duration: 0.5, type: "spring" }}
+        >
           <LightDarkToggle />
         </motion.div>
       </nav>

@@ -10,6 +10,7 @@ import ProjectDetails from "./pages/portfolio/[project]/ProjectDetails";
 import Resume from "./pages/resume/Resume";
 import Contact from "./pages/contact/Contact";
 import PageNotFound from "./pages/404/PageNotFound";
+import AboutMe from "./components/AboutMe";
 
 /**
  * Instructions for Customizing the Portfolio
@@ -88,6 +89,7 @@ function App() {
           {/* Define routes */}
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Landing name={personalDetails.name} tagline={personalDetails.tagline} />} />
+            <Route path="/about" element={<AboutMe name={personalDetails.name} />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume brand={personalDetails.brand} />} />
 
