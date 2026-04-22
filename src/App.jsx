@@ -11,6 +11,8 @@ import Resume from "./pages/resume/Resume";
 import Contact from "./pages/contact/Contact";
 import PageNotFound from "./pages/404/PageNotFound";
 import AboutMe from "./components/AboutMe";
+import Skills from "./pages/skills/Skills";
+import Experience from "./pages/experience/Experience";
 
 /**
  * Instructions for Customizing the Portfolio
@@ -90,6 +92,8 @@ function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Landing name={personalDetails.name} tagline={personalDetails.tagline} />} />
             <Route path="/about" element={<AboutMe name={personalDetails.name} />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume brand={personalDetails.brand} />} />
 

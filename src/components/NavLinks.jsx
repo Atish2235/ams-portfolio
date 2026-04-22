@@ -50,10 +50,30 @@ const NavLinks = () => {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 2.25, duration: 0.5, type: "spring" }}
+        >
+          <NavLink to="/skills" onClick={() => setIsMenuOpen(false)}>
+            Skills
+          </NavLink>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
         >
           <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
             Portfolio
+          </NavLink>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 2.15, duration: 0.5, type: "spring" }}
+        >
+          <NavLink to="/experience" onClick={() => setIsMenuOpen(false)}>
+            Experience
           </NavLink>
         </motion.div>
 
