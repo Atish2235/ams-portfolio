@@ -430,3 +430,9 @@ footer .socialIcons {
     width: 35% !important;
   }
 }
+
+@media (max-width: 768px) {
+  header .dropdown-toggle {
+    margin-right: 12px;
+  }
+}

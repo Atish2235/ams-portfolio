@@ -44,7 +44,7 @@ const AboutMe = ({ name }) => {
           
           {/* Image Section */}
           <motion.div
-            className="personalImage col-12 col-lg-6"
+            className="personalImage col-12 col-lg-6 d-flex justify-content-center px-3 px-lg-0 mb-4 mb-lg-0"
             ref={ref}
             initial={{ x: "-10vw", opacity: 0, scale: 0.5 }}
             animate={
@@ -58,8 +58,11 @@ const AboutMe = ({ name }) => {
             <motion.img
               src={aboutMeImg}
               alt={name}
+              loading="lazy"
               style={{
-                width: "min(420px, 100%)",
+                width: "min(420px, 88vw)", // desktop stays same; mobile scales safely
+                maxWidth: "100%",
+                height: "auto",
                 aspectRatio: "1 / 1",
                 borderRadius: "50%",
                 objectFit: "cover",
