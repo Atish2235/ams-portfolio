@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import aboutMeImg from "../images/suit.png";
+import { useEffect, useState } from "react";
 
 /**
  * Represents the About Me section.
@@ -16,6 +17,21 @@ const AboutMe = ({ name }) => {
     threshold: 0.4,
     triggerOnce: true,
   });
+
+  const [isLaptop, setIsLaptop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(min-width: 992px) and (max-width: 1366px)"
+    );
+
+    const handleChange = (e) => setIsLaptop(e.matches);
+
+    setIsLaptop(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   // Stagger animation
   const staggerVariants = {
@@ -46,6 +62,7 @@ const AboutMe = ({ name }) => {
           <motion.div
             className="personalImage col-12 col-lg-6 d-flex justify-content-center px-3 px-lg-0 mb-4 mb-lg-0"
             ref={ref}
+            style={{ marginTop: isLaptop ? "-2rem" : "0" }}
             initial={{ x: "-10vw", opacity: 0, scale: 0.5 }}
             animate={
               inView
